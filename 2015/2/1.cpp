@@ -53,6 +53,7 @@ int calc_dimensions(string dimension) {
     result += small;
     return result;
 }
+
 int find_dimensions(vector<string> dims) {
     int total_paper = 0;
     
