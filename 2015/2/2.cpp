@@ -22,38 +22,24 @@ vector<string> read_file() {
 
 int calc_dimensions(string dimension) {
     stringstream ss(dimension);
-    vector<int> dimensions;
+    vector<int> d;
     string substr;
     char delim = 'x';
 
     while(getline(ss, substr, delim)) {
-        dimensions.push_back(stoi(substr));
-    }
-
-    int l = dimensions[0];
-    int w = dimensions[1];
-    int h = dimensions[2];
-
-    vector<int> small2;
-
-    int large = dimensions[0];
-    int ignore_index = 0;
-    for (int i=1; i<3; i++) {
-        if (dimensions[i] > large) {
-            large = dimensions[i];
-            ignore_index = i;
-        }
-    }
-    
-    int results = 0;
-    for (int i=0; i<3; i++) {
-        if (i != ignore_index) {
-            results += dimensions[i] * 2;
+        if (d.empty()) {
+            d.push_back(stoi(substr));
+        } else {
+            int last = d.back();
+            if (last <= stoi(substr)) {
+                d.push_back(stoi(substr));
+            } else {
+                d.insert(d.begin(), stoi(substr));
+            }
         }
     }
 
-    results += l*w*h;
-    return results;
+    return 2*d[0] + 2*d[1] + d[0]*d[1]*d[2];
 }
 
 int find_dimensions(vector<string> dims) {
