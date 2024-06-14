@@ -47,11 +47,7 @@ int visited_houses(string directions) {
             visits[pos[santa]] = 1;
         }
 
-        if (santa == 0) {
-            santa = 1;
-        } else {
-            santa = 0;
-        }
+        santa = (santa == 0) ? 1 : 0;
     }
 
     return visits.size();
