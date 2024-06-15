@@ -33,7 +33,6 @@ int find_zero(string key) {
 
 int main() {
     string data = read_file()[0];
-    data = "abcdef";
 
     cout << find_zero(data) << '\n';
 
