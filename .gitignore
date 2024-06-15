@@ -3,3 +3,5 @@
 example*.txt
 input*.txt
 a.out
+md5.h
+md5.cpp
