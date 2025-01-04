@@ -62,6 +62,7 @@ def search_path(layout, start, xmax, ymax):
 def main():
     readfile("example.txt")
     readfile("input.txt")
+    readfile("input_k.txt")
 
 if __name__ in "__main__":
     main()
