@@ -25,13 +25,9 @@ def t_hash(a):
 def main():
     a = readfile("example.txt")
     b = readfile("input.txt")
-    import cProfile
-    with cProfile.Profile() as pr:
-        print(t_count(b))
-        pr.print_stats()
-    with cProfile.Profile() as pr:
-        print(t_hash(b))
-        pr.print_stats()
+    c = readfile("inputjorge.txt")
+    print(t_count(b))
+    print(t_count(c))
 
 if __name__ in "__main__":
     main()

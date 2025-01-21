@@ -17,6 +17,7 @@ def readfile(filename):
 def main():
     readfile("example.txt")
     readfile("input.txt")
+    readfile("inputjorge.txt")
 
 if __name__ in "__main__":
     main()
